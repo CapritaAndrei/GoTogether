@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
+import androidx.compose.material.TextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -36,6 +37,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontVariation.weight
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.maps.android.compose.R
@@ -56,14 +58,35 @@ fun CarPoolingScreenWrapper() {
 
 @Composable
 fun ChooseScreen(onChoose: () -> Unit) {
+    var text by remember { mutableStateOf("") }
+    var text1 by remember { mutableStateOf("") }
+    var text2 by remember { mutableStateOf("") }
     Column(modifier = Modifier.fillMaxSize().background(color = Color.LightGray), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
         Text("GoTogether", fontWeight = FontWeight.ExtraBold, fontSize = 26.sp, modifier = Modifier.padding(top = 60.dp))
         Text("Sofer", modifier = Modifier.padding(20.dp).padding(top = 20.dp), fontSize = 22.sp)
         Image(painterResource(R.drawable.driver), contentDescription = null,
             modifier = Modifier.weight(1f).clickable { onChoose() })
         Text("Vroooomm.....", fontStyle = FontStyle.Italic, fontSize = 15.sp, color = Color.DarkGray)
-        Text("Plecare: ASE, Ora 21:00", modifier = Modifier.padding(top = 24.dp), fontSize = 22.sp)
-        Text("Destinatie: Beraria H", modifier = Modifier.padding(bottom = 20.dp), fontSize = 22.sp)
+        TextField(
+            value = text,
+            onValueChange = { newText -> text = newText },
+            label = { Text("Plecare") },
+            placeholder = { Text("locatie", fontStyle = FontStyle.Italic) }
+        )
+        TextField(
+            value = text1,
+            onValueChange = { newText -> text1 = newText },
+            label = { Text("Destinatie") },
+            placeholder = { Text("locatie", fontStyle = FontStyle.Italic) }
+        )
+        TextField(
+            value = text2,
+            onValueChange = { newText -> text2 = newText },
+            label = { Text("Ora") },
+            placeholder = { Text("Oras", fontStyle = FontStyle.Italic) }
+        )
+
+
         Divider(
             modifier = Modifier.fillMaxWidth(),
             color = Color.Black
@@ -115,7 +138,7 @@ fun VictoryScreen(visible: Boolean, onDismiss: () -> Unit) {
 
                 // Display money earned
                 Text("Bani castigati:", fontSize = 20.sp, color = Color.White)
-                Text("$7", fontSize = 28.sp, color = Color.Yellow)
+                Text("$7 ($2 profit)", fontSize = 28.sp, color = Color.Yellow)
 
                 Spacer(modifier = Modifier.height(8.dp))
 
@@ -143,5 +166,13 @@ fun VictoryScreen(visible: Boolean, onDismiss: () -> Unit) {
                 }
             }
         }
+    }
+}
+
+@Preview
+@Composable
+fun VictoryScreenPreview() {
+    ChooseScreen() {
+
     }
 }

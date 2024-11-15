@@ -45,6 +45,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.android.gms.maps.model.LatLng
@@ -166,7 +167,7 @@ fun IncomingClientsBottomSheet(
                             showBottomSheet = false
                             showClient2 = false
                             declineClient2()
-                        })
+                        }, dangerSign = true)
                     }
 
 
@@ -199,7 +200,7 @@ fun IncomingClientsBottomSheet(
 
 @Composable
 fun ClientItem(
-    clientEntry: ClientEntry, onShowRoad: () -> Unit, onAccept: () -> Unit, onDecline: () -> Unit = {}
+    clientEntry: ClientEntry, onShowRoad: () -> Unit, onAccept: () -> Unit, onDecline: () -> Unit = {}, dangerSign: Boolean = false,
 ) {
     Card(
         shape = RoundedCornerShape(8.dp), modifier = Modifier
@@ -243,6 +244,9 @@ fun ClientItem(
                         tint = Color(0xFFFFD700),
                         modifier = Modifier.size(16.dp)
                     )
+                    if (dangerSign) {
+                        Text("Posibil sa intarzie", color = Color.Red, fontSize = 12.sp, fontStyle = FontStyle.Italic)
+                    }
                 }
             }
 
