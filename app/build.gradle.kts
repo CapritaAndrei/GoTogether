@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     alias(libs.plugins.compose.compiler)
+    kotlin("plugin.serialization") version "2.0.20"
 }
 
 android {
@@ -58,6 +59,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.preview.tooling)
     implementation(libs.androidx.material3.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.kotlinx.serialization.json)
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.test.core)
@@ -68,6 +70,8 @@ dependencies {
     androidTestImplementation(libs.test.junit)
     androidTestImplementation(libs.androidx.test.compose.ui)
     androidTestImplementation(libs.kotlinx.coroutines.test)
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio)
 
     // Instead of the lines below, regular apps would load these libraries from Maven according to
     // the README installation instructions

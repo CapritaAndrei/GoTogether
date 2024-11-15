@@ -58,6 +58,7 @@ import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapType
 import com.google.maps.android.compose.R
+import com.google.maps.android.compose.clients
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.google.maps.android.compose.rememberMarkerState
 
@@ -469,7 +470,7 @@ fun ClientEntry2(client: ClientEntry) {
         }
 
         Image(
-            painter = painterResource(id = client.iconResId), // Replace with your image resource
+            painter = painterResource(id = R.drawable.user_icon_2), // Replace with your image resource
             contentDescription = "User Icon",
             modifier = Modifier
                 .size(48.dp)

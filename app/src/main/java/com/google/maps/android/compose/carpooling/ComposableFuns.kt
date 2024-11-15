@@ -52,7 +52,9 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.RoundCap
 import com.google.maps.android.compose.Polyline
 import com.google.maps.android.compose.R
+import com.google.maps.android.compose.clients
 import kotlinx.coroutines.launch
+import kotlinx.serialization.Serializable
 
 @Composable
 fun DrawFirstClientRoad(visible: Boolean) {
@@ -208,7 +210,7 @@ fun ClientItem(
             .clickable {
                 onShowRoad()
             }, elevation = CardDefaults.cardElevation(4.dp), colors = CardDefaults.cardColors(
-            containerColor = clientEntry.color,
+            containerColor = Color(clientEntry.color),
         )
     ) {
         Row(
@@ -219,7 +221,7 @@ fun ClientItem(
         ) {
             // User Icon
             Image(
-                painter = painterResource(id = clientEntry.iconResId), // Replace with your image resource
+                painter = painterResource(id = R.drawable.user_icon_2), // Replace with your image resource
                 contentDescription = "User Icon",
                 modifier = Modifier
                     .size(48.dp)
@@ -266,33 +268,13 @@ fun ClientItem(
     }
 }
 
-val clients = listOf(
-    ClientEntry(
-        name = "Alex",
-        cost = "3",
-        iconResId = R.drawable.user_icon_2,
-        starRating = 4.8f,
-        color = Color(0x80E6E6FA)
-    ), ClientEntry(
-        name = "Teo",
-        cost = "4",
-        iconResId = R.drawable.user_icon_2,
-        starRating = 5f,
-        color = Color(0x80FFDAB9)
-    ), ClientEntry(
-        name = "Doru Terminatoru",
-        cost = "8",
-        iconResId = R.drawable.user_icon_2,
-        starRating = 3.2f,
-        color = Color(0x80F08080)
-    )
-)
+
 
 // Sample data class for client details
+@Serializable
 data class ClientEntry(
     val name: String,
     val cost: String,
-    val iconResId: Int,  // Replace with the resource ID for user icon
     val starRating: Float,
-    val color: Color,
+    val color: Long,
 )
