@@ -1,9 +1,12 @@
+# GoTogether
+Ride-sharing application written in Kotlin. 
+Uses Google Maps's API for location tracking and routing.
+
 ![Tests](https://github.com/googlemaps/android-maps-compose/actions/workflows/test.yml/badge.svg)
 ![Stable](https://img.shields.io/badge/stability-stable-green)
 [![Discord](https://img.shields.io/discord/676948200904589322)][Discord server]
 ![Apache-2.0](https://img.shields.io/badge/license-Apache-blue)
-
-# Maps Compose 🗺
+# Documentation for Maps Compose 🗺
 
 ## Description
 
