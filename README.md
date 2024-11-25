@@ -24,7 +24,7 @@ GoTogether is a Kotlin-based ride-sharing app that leverages Google Maps APIs to
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/Alex1lazu/GoTogether.git
+   git clone https://github.com/CapritaAndrei/GoTogether.git
    ```
 
 2. **Open the Project in Android Studio**
@@ -82,10 +82,11 @@ GoTogether is a Kotlin-based ride-sharing app that leverages Google Maps APIs to
 - **Ktor Client**: For network operations.
 - **Coroutines**: For asynchronous programming.
 - **Material Design Components**: Ensures a consistent and modern UI.
+- **Python Flask**: For server purposes.
 
 ## Contact
 
-- **Name**: Alex Lazureanu
-- **Email**: [lazureanualex@gmail.com](mailto:lazureanualex@gmail.com)
-- **LinkedIn**: [Alex Lazureanu](https://www.linkedin.com/in/alex-lazureanu)
-- **GitHub**: [Alex1lazu](https://github.com/Alex1lazu)
+- **Name**: Caprita Andrei
+- **Email**: [caprita.andrei0@gmail.com](mailto:caprita.andrei0@gmail.com)
+- **LinkedIn**: [Caprita Andrei](https://www.linkedin.com/in/caprita-andrei)
+- **GitHub**: [CapritaAndrei](https://github.com/CapritaAndrei)
