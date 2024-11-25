@@ -35,7 +35,7 @@ class NetworkRepository {
         }.bodyAsText().also { Log.d("answer", it)}
 
     companion object {
-        private const val URI = "http://192.168.1.6:8080/clients"
+        private const val URI = "http:///192.168.1.3:8080/clients"
     }
 }
 
